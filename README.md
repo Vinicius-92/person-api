@@ -70,6 +70,6 @@ JSON required in body:
 ``` 
 
 ### To-do:
-* Implement tests
-* Create a basic database
+* Solve N+1 selects problem
+* ~Create a basic database~
 
