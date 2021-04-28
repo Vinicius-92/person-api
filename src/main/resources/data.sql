@@ -10,19 +10,19 @@ INSERT INTO person (birth_date, cpf, first_name, last_name) VALUES ('2009-01-01'
 INSERT INTO person (birth_date, cpf, first_name, last_name) VALUES ('2010-02-02', '11270285882', 'Samuel', 'Henrique');
 
 
-INSERT INTO phone (number, type, person_id) VALUES ('78151031020', 'Home', 1);
-INSERT INTO phone (number, type, person_id) VALUES ('43202152039', 'Commercial', 1);
-INSERT INTO phone (number, type, person_id) VALUES ('78800191017', 'Mobile', 2);
-INSERT INTO phone (number, type, person_id) VALUES ('61848852155', 'Home', 3);
-INSERT INTO phone (number, type, person_id) VALUES ('78151031020', 'Commercial', 4);
-INSERT INTO phone (number, type, person_id) VALUES ('12605462073', 'Home', 5);
-INSERT INTO phone (number, type, person_id) VALUES ('66893287358', 'Mobile', 6);
-INSERT INTO phone (number, type, person_id) VALUES ('67702458424', 'Mobile', 7);
-INSERT INTO phone (number, type, person_id) VALUES ('35837770856', 'Commercial', 8);
-INSERT INTO phone (number, type, person_id) VALUES ('24651228623', 'Home', 9);
-INSERT INTO phone (number, type, person_id) VALUES ('50248670331', 'Mobile', 10);
-INSERT INTO phone (number, type, person_id) VALUES ('26707595153', 'Home', 10);
-INSERT INTO phone (number, type, person_id) VALUES ('83885219967', 'Mobile', 2);
-INSERT INTO phone (number, type, person_id) VALUES ('14832560416', 'Mobile', 3);
-INSERT INTO phone (number, type, person_id) VALUES ('56130228724', 'Commercial', 5);
+INSERT INTO phone (number, type, person_id) VALUES ('78151031020', 'HOME', 1);
+INSERT INTO phone (number, type, person_id) VALUES ('43202152039', 'COMMERCIAL', 1);
+INSERT INTO phone (number, type, person_id) VALUES ('78800191017', 'MOBILE', 2);
+INSERT INTO phone (number, type, person_id) VALUES ('61848852155', 'HOME', 3);
+INSERT INTO phone (number, type, person_id) VALUES ('78151031020', 'COMMERCIAL', 4);
+INSERT INTO phone (number, type, person_id) VALUES ('12605462073', 'HOME', 5);
+INSERT INTO phone (number, type, person_id) VALUES ('66893287358', 'MOBILE', 6);
+INSERT INTO phone (number, type, person_id) VALUES ('67702458424', 'MOBILE', 7);
+INSERT INTO phone (number, type, person_id) VALUES ('35837770856', 'COMMERCIAL', 8);
+INSERT INTO phone (number, type, person_id) VALUES ('24651228623', 'HOME', 9);
+INSERT INTO phone (number, type, person_id) VALUES ('50248670331', 'MOBILE', 10);
+INSERT INTO phone (number, type, person_id) VALUES ('26707595153', 'HOME', 10);
+INSERT INTO phone (number, type, person_id) VALUES ('83885219967', 'MOBILE', 2);
+INSERT INTO phone (number, type, person_id) VALUES ('14832560416', 'MOBILE', 3);
+INSERT INTO phone (number, type, person_id) VALUES ('56130228724', 'COMMERCIAL', 5);
 

@@ -29,9 +29,8 @@ public class Person {
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    @Column(nullable = false)
     private LocalDate birthDate;
 
-    @OneToMany(mappedBy = "phone")
+    @OneToMany(mappedBy = "person")
     private List<Phone> phones;
 }

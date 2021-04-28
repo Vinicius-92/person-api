@@ -1,5 +1,7 @@
 package com.viniciusaugusto.personapi.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.viniciusaugusto.personapi.entity.Person;
 import com.viniciusaugusto.personapi.enums.PhoneType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,4 +27,7 @@ public class PhoneDTO {
     @NotEmpty
     @Size(min = 13, max = 14)
     private String number;
+
+    @JsonIgnore
+    private Person person;
 }
