@@ -28,7 +28,7 @@ public class PersonService {
     }
 
     public List<PersonDTO> listAll() {
-        List<Person> allPeople = repository.findAll();
+        List<Person> allPeople = repository.listAll();
         return allPeople.stream()
                 .map(personMapper::toDTO)
                 .collect(Collectors.toList());
@@ -46,7 +46,6 @@ public class PersonService {
 
     public MessageResponseDTO updateById(Long id, PersonDTO personDTO) throws PersonNotFoundException {
         verifyIfExists(id);
-
         Person personToUpdate = personMapper.toModel(personDTO);
         Person updatedPerson = repository.save(personToUpdate);
         return createMessageResponse(updatedPerson.getId(), "Updated person with ID ");

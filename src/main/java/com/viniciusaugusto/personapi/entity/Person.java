@@ -31,6 +31,6 @@ public class Person {
 
     private LocalDate birthDate;
 
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
     private List<Phone> phones;
 }
