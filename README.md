@@ -70,7 +70,7 @@ JSON required in body:
 ``` 
 
 ### To-do:
-* Add more data and return values in pages (Pageable)
+* ~Add more data~ and return values in pages (Pageable)
 * ~Solve N+1 selects problem~ -> Done
 * ~Create a basic database~ -> Done
 
