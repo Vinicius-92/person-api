@@ -8,8 +8,10 @@ import com.viniciusaugusto.personapi.mapper.PersonMapper;
 import com.viniciusaugusto.personapi.repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,11 +29,16 @@ public class PersonService {
         return createMessageResponse(savedPerson.getId(), "Created person with ID ");
     }
 
+    @Transactional(readOnly = true)
     public List<PersonDTO> listAll() {
-        List<Person> allPeople = repository.listAll();
-        return allPeople.stream()
+        List<Person> person = repository.listAll();
+        List<PersonDTO> dto = person
+                .stream()
                 .map(personMapper::toDTO)
+                .distinct()
                 .collect(Collectors.toList());
+       Page<PersonDTO> personDTO = new PageImpl<>(dto);
+       return  dto;
     }
 
     public PersonDTO findById(Long id) throws PersonNotFoundException {

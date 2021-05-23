@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    @Query("SELECT person, phone FROM Person person JOIN FETCH person.phones phone")
-    public List<Person> listAll();
+    @Query("SELECT person FROM Person person JOIN FETCH person.phones phone ORDER BY person.id")
+    List<Person> listAll();
 }

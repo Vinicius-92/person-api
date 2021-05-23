@@ -6,9 +6,9 @@ import com.viniciusaugusto.personapi.exception.PersonNotFoundException;
 import com.viniciusaugusto.personapi.service.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 

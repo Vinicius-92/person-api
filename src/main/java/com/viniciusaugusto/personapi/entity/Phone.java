@@ -28,6 +28,7 @@ public class Phone {
     private String number;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "person_id")
     private Person person;
 }
