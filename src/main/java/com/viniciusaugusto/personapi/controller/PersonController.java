@@ -6,11 +6,11 @@ import com.viniciusaugusto.personapi.exception.PersonNotFoundException;
 import com.viniciusaugusto.personapi.service.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/people")
@@ -26,8 +26,11 @@ public class PersonController {
     }
 
     @GetMapping
-    public List<PersonDTO> listAll() {
-        return service.listAll();
+    public Page<PersonDTO> listAll(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "size", defaultValue = "10") Integer size) {
+        PageRequest pageRequest = PageRequest.of(page, size);
+        return service.listAll(pageRequest);
     }
 
     @GetMapping("/{id}")

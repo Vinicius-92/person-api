@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -30,15 +32,10 @@ public class PersonService {
     }
 
     @Transactional(readOnly = true)
-    public List<PersonDTO> listAll() {
-        List<Person> person = repository.listAll();
-        List<PersonDTO> dto = person
-                .stream()
-                .map(personMapper::toDTO)
-                .distinct()
-                .collect(Collectors.toList());
-       Page<PersonDTO> personDTO = new PageImpl<>(dto);
-       return  dto;
+    public Page<PersonDTO> listAll(PageRequest pageRequest) {
+        Page<Person> person = repository.findAll(pageRequest);
+        repository.listAll(person.stream().collect(Collectors.toList()));
+        return person.map(personMapper::toDTO);
     }
 
     public PersonDTO findById(Long id) throws PersonNotFoundException {

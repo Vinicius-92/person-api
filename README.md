@@ -6,17 +6,14 @@
 
 A fully functional API that control person and their list of phone numbers, deployed at Heroku. Made using:
 
-* Java 11
-* Maven
+* Java 11 with Spring Boot, JPA and Maven
 * H2-Database
-* Spring Boot
-* Spring Data Jpa
 * Lombok
 * Heroku
 
 ### What I've learned: 
 
-How to structure a Spring Boot Java application using best practices and SOLID principles, using dependencies from Maven like Lombok and Mapstruct to save time and create more readable and easy to maintain code.
+How to structure a Spring Boot Java application using best practices and SOLID principles, using dependencies from Maven like Lombok and Mapstruct to save time and create more readable and easy to maintain code. I've also learned how to solve de N+1 selects problem using the ORM aspect of cached information, as explained by Martin Fowler is his book 'Patterns of Enterprise Application Architecture', and last how to apply pagination to make a better response to an endpoint with multiple results.
 
 ### How to use:
 
@@ -57,7 +54,7 @@ DELET - Delete person by ID:
 
 POST - Create person:
 ```
-/api/v1/people/{id}
+/api/v1/people/
 
 ```
 JSON required in body:
@@ -65,12 +62,12 @@ JSON required in body:
 { 
   "firstName": "Example",
   "lastName": "AnotherExample",
-  "CPF": "12345678912"
+  "cpf": "12345678912"
 }
 ``` 
 
 ### To-do:
-* ~Add more data~ and return values in pages (Pageable)
+* Implement Patch and Put Http methods
+* ~Add more data and return values in pages (Pageable)~ -> Done
 * ~Solve N+1 selects problem~ -> Done
 * ~Create a basic database~ -> Done
-
